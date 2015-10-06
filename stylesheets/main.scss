@@ -1,0 +1,136 @@
+.container{
+	color: #888;
+}
+
+// Opening checkboxes
+.task{
+	text-align: center;
+	label{
+		padding: 35px;
+		span{
+			margin: 5px;
+			input{
+			padding: 5px;
+			}
+		}
+		
+	}
+}
+
+// Radio buttons
+#radioContainer{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	color: white;
+	background-color: #444;
+	text-align: center;
+	.inner{
+		// text-align: center;
+		span{
+			margin: 5px;
+		}
+	}
+	
+}
+@media(max-width:992px){
+	#radioContainer{
+		div{
+			display: inline-block;
+		}
+		
+	}
+}
+
+// Title
+.title{
+	text-align:center;
+}
+
+// red classes 
+.redPrimary{
+	background-color: #860000;
+}
+.redSecondary{
+	background-color: #C00000;
+	color: white;
+}
+.redTertiary{
+	background-color: #E03838;
+	color:yellow;
+}
+.redTitle{
+	color: white;
+}
+
+// green classes 
+.greenPrimary{
+	background-color: #003803;
+
+}
+.greenSecondary{
+	background-color: #006117;
+	color: #6699FF;
+}
+.greenTertiary{
+	background-color: #1C8F00;
+	color: #000066;
+}
+.greenTitle{
+	color: white;
+}
+
+// blue classes 
+.bluePrimary{
+	background-color: #0D1A8C;
+
+}
+.blueSecondary{
+	background-color: #3366FF;
+	color: #EB5C00;
+}
+.blueTertiary{
+	background-color: #6699FF;
+	color: #FFAD00;
+}
+.blueTitle{
+	color: white;
+}
+
+// start of part 2
+#part2{
+	// background-color: rgba(51,51,51, .9);
+	height: 600px;
+	margin-top: 25px;
+	color: black;
+}
+#folders{
+	margin: 10px;
+	label{
+		margin: 5px;
+	}
+	#folder{
+		margin-top:30px;
+		font-weight: bold;
+
+	}
+	#file{
+			margin: 5px;
+			text-decoration: underline;
+			font-weight: normal;
+		}
+}
+.failClass, .successClass{
+	background-color: rgba(255, 0, 0, .5);
+	width: 300px;
+	text-align: center;
+	margin:10px;
+}
+.failClass{
+	background-color: rgba(255, 0, 0, .5);
+}
+.successClass{
+	background-color: rgba(10, 205, 10, .5);
+}
+
+
+

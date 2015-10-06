@@ -1,0 +1,99 @@
+.container {
+  color: #888; }
+
+.task {
+  text-align: center; }
+  .task label {
+    padding: 35px; }
+    .task label span {
+      margin: 5px; }
+      .task label span input {
+        padding: 5px; }
+
+#radioContainer {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: white;
+  background-color: #444;
+  text-align: center; }
+  #radioContainer .inner span {
+    margin: 5px; }
+
+@media (max-width: 992px) {
+  #radioContainer div {
+    display: inline-block; } }
+.title {
+  text-align: center; }
+
+.redPrimary {
+  background-color: #860000; }
+
+.redSecondary {
+  background-color: #C00000;
+  color: white; }
+
+.redTertiary {
+  background-color: #E03838;
+  color: yellow; }
+
+.redTitle {
+  color: white; }
+
+.greenPrimary {
+  background-color: #003803; }
+
+.greenSecondary {
+  background-color: #006117;
+  color: #6699FF; }
+
+.greenTertiary {
+  background-color: #1C8F00;
+  color: #000066; }
+
+.greenTitle {
+  color: white; }
+
+.bluePrimary {
+  background-color: #0D1A8C; }
+
+.blueSecondary {
+  background-color: #3366FF;
+  color: #EB5C00; }
+
+.blueTertiary {
+  background-color: #6699FF;
+  color: #FFAD00; }
+
+.blueTitle {
+  color: white; }
+
+#part2 {
+  height: 600px;
+  margin-top: 25px;
+  color: black; }
+
+#folders {
+  margin: 10px; }
+  #folders label {
+    margin: 5px; }
+  #folders #folder {
+    margin-top: 30px;
+    font-weight: bold; }
+  #folders #file {
+    margin: 5px;
+    text-decoration: underline;
+    font-weight: normal; }
+
+.failClass, .successClass {
+  background-color: rgba(255, 0, 0, 0.5);
+  width: 300px;
+  text-align: center;
+  margin: 10px; }
+
+.failClass {
+  background-color: rgba(255, 0, 0, 0.5); }
+
+.successClass {
+  background-color: rgba(10, 205, 10, 0.5); }
+
+/*# sourceMappingURL=main.css.map */

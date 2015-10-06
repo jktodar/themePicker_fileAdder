@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='MyApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 2</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/cssResetter.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+	
+</head>
+<body ng-controller='TaskController as taskCtrl'>
+
+	<div class='task'>
+		<label>Part 1: Theme Picker<input type="checkbox" ng-model='taskCtrl.showTheme'></label>
+		<label>Part 2: Folder Structure<input type="checkbox" ng-model='taskCtrl.showTask'></label>
+	</div>
+	<!-- Start Part 1 -->
+	<div class="wrapper" ng-controller='ThemeController as ctrl' ng-show='taskCtrl.showTheme'>
+		<div class="container" ng-class="ctrl.userObjSelect.class.primary">
+			<div class="row">
+				<div class="col-md-12"><h3 ng-class='ctrl.userObjSelect.class.title' class='title'>Theme Picker</h3></div>
+				<div id='radioContainer' class="col-md-10 col-md-offset-1">
+					<div class="inner col-md-offset-1">
+						<div class="col-md-3">
+							<span><input type="radio" ng-value='none' ng-model="ctrl.userObjSelect">  None</span>
+						</div>
+						<div class="col-md-3">
+							<span><input type="radio" ng-value='ctrl.redValue' ng-model="ctrl.userObjSelect">  Red</span>
+						</div>
+						<div class="col-md-3">
+							<span><input type="radio" ng-value='ctrl.greenValue' ng-model="ctrl.userObjSelect">  Green</span>
+						</div>
+						<div class="col-md-3">
+							<span><input type="radio" ng-value='ctrl.blueValue' ng-model="ctrl.userObjSelect">  Blue</span>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					
+						
+					
+					<div class="col-md-6" >
+						<div ng-class=" ctrl.userObjSelect.class.secondary" >
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum laboriosam delectus consequatur at sunt mollitia quos eum nam quibusdam facilis error, soluta reprehenderit, fugiat expedita architecto velit totam sed?
+							</p>
+							
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum laboriosam delectus consequatur at sunt mollitia quos eum nam quibusdam facilis error, soluta reprehenderit, fugiat expedita architecto velit totam sed?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum laboriosam delectus consequatur at sunt mollitia quos eum nam quibusdam facilis error, soluta reprehenderit, fugiat expedita architecto velit totam sed?
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum laboriosam delectus consequatur at sunt mollitia quos eum nam quibusdam facilis error, soluta reprehenderit, fugiat expedita architecto velit totam sed?
+							</p>
+					</div>
+						</div>
+
+					
+					<div class="col-md-6">
+						<div ng-class=" ctrl.userObjSelect.class.tertiary">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum laboriosam delectus consequatur at sunt mollitia quos eum nam quibusdam facilis error, soluta reprehenderit, fugiat expedita architecto velit totam sed?
+							</p>
+						
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum laboriosam delectus consequatur at sunt mollitia quos eum nam quibusdam facilis error, soluta reprehenderit, fugiat expedita architecto velit totam sed?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum laboriosam delectus consequatur at sunt mollitia quos eum nam quibusdam facilis error, soluta reprehenderit, fugiat expedita architecto velit totam sed?
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum laboriosam delectus consequatur at sunt mollitia quos eum nam quibusdam facilis error, soluta reprehenderit, fugiat expedita architecto velit totam sed?
+							</p>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			
+
+		</div><!--  End Container div -->
+	</div><!--  End Part 1 div -->
+	<!--  End Part 2 div -->
+	<div class="wrapper" ng-controller='folderController as ctrl' ng-show='taskCtrl.showTask'>
+
+		<div class="row">
+				<div id='part2' class="col-md-10 col-md-offset-1">
+					
+					<div id='folders' class='col-md-4'>
+						<label>Hide Folder Content  <input type='checkbox' ng-model='showFolders'/></label>
+
+						<ul >
+							<li id='folder' ng-repeat='folder in ctrl.foldersObj'>
+								<span  ng-bind='folder.name'></span>
+								<ul ng-hide='showFolders'>
+									<li id='file' ng-repeat='(key,value) in folder.files'>
+										<span ng-bind='value.fileName'></span>
+									</li>
+								</ul>
+								
+							</li>
+						</ul>
+					</div>
+
+					<div  class='col-md-6'>
+
+						<input type='text' ng-bind='ctrl.folderSelect' ng-model='ctrl.newFileName'>
+						<label>Folder 1<input type='radio' name='folder' 
+							ng-value='ctrl.foldersObj.Folder1' ng-model='ctrl.folderSelect'></label>
+						<label>Folder 2<input type='radio' name='folder' 
+							ng-value='ctrl.foldersObj.Folder2' ng-model='ctrl.folderSelect'></label>
+						<label>Folder 3<input type='radio' name='folder' 
+							ng-value='ctrl.foldersObj.Folder3' ng-model='ctrl.folderSelect'></label>
+						<button ng-click='ctrl.addFile(ctrl.folderSelect, ctrl.newFileName)'>Add File</button>
+					</div>
+					<label ng-hide='ctrl.showSuccess' ng-class='ctrl.messages.fail.class' ng-bind='ctrl.messages.fail.alert'></label>
+					<label ng-show='ctrl.showSuccess' ng-class='ctrl.messages.success.class' ng-bind='ctrl.messages.success.alert'></label>
+					
+					
+				</div>
+
+		</div>
+	</div>
+	<script src='js/angular.min.js'></script>
+	<script src='js/app.js'></script>
+</body>
+</html>
